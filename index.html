@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <style>
+    body {
+        min-height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #062b5c, #087e8b, #1ba39c);
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        width: 350px;
+        height: 350px;
+        background: rgba(77, 255, 196, 0.15);
+        border-radius: 50%;
+        top: -100px;
+        left: -100px;
+        filter: blur(10px);
+        z-index: -1;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        background: rgba(0, 102, 255, 0.2);
+        border-radius: 50%;
+        bottom: -150px;
+        right: -100px;
+        filter: blur(15px);
+        z-index: -1;
+    }
+
+    .container {
+        max-width: 750px;
+    }
+
+    h1 {
+        color: rgb(29, 71, 90);
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        margin-bottom: 30px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 25px;
+
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.25),
+            inset 0 1px 1px rgba(255, 255, 255, 0.2);
+
+        padding: 40px !important;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        max-width: 500px;
+
+        padding: 14px 20px;
+
+        border: none;
+        border-radius: 15px;
+
+        background: rgba(255, 255, 255, 0.9);
+
+        color: #073b4c;
+        font-size: 16px;
+
+        outline: none;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+        transition: 0.3s;
+    }
+
+    input[type="number"]:focus {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.18),
+            0 0 0 3px rgba(66, 230, 190, 0.4);
+    }
+
+    input[type="number"]::placeholder {
+        color: #6c7a89;
+    }
+
+    input[type="button"] {
+        width: 48%;
+        margin: 5px;
+
+        padding: 12px;
+
+        border: none;
+        border-radius: 12px;
+
+        background: linear-gradient(135deg, #0077b6, #00b4a0);
+
+        color: white;
+
+        font-size: 15px;
+        font-weight: bold;
+
+        cursor: pointer;
+
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+
+        transition: all 0.3s ease;
+    }
+
+    input[type="button"]:hover {
+        transform: translateY(-3px) scale(1.02);
+
+        background: linear-gradient(135deg, #0096c7, #20c997);
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    input[type="button"]:active {
+        transform: scale(0.97);
+    }
+
+    #output {
+        background: rgba(255, 255, 255, 0.9);
+
+        color: #064663;
+
+        padding: 18px;
+
+        border-radius: 15px;
+
+        font-size: 17px;
+        font-weight: 600;
+
+        min-height: 60px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow:
+            inset 0 2px 8px rgba(0, 0, 0, 0.08),
+            0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 576px) {
+
+        .card {
+            padding: 25px !important;
+        }
+
+        input[type="button"] {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <div class="container mt-5">
+
+        <h1 class="text-center">Arithmetic Operations</h1>
+
+        <div class="card p-4">
+
+            <form>
+                <input type="number" id="num1" placeholder="Enter your first number"><br><br>
+                <input type="number" id="num2" placeholder="Enter your second number"><br><br>
+                <input type="button" py-click="adding_numbers" value="Add">
+                <input type="button" py-click="subtracting_numbers" value="Subtract">
+                <input type="button" py-click="multiplying_numbers" value="Multiply">
+                <input type="button" py-click="dividing_numbers" value="Divide">
+            </form>
+
+            <br>
+
+            <div id="output" class="text-center"></div>
+        </div>
+    </div>
+
+    <py-script src="main.py"></py-script>
+
+</body>
+</html>
