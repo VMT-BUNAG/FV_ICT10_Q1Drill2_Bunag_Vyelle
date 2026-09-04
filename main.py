@@ -28,3 +28,24 @@ def dividing_numbers(e): # this operation divides the first number by the second
     quotient = first_number / second_number
 
     display(f'The quotient of {first_number} and {second_number} is {quotient}', target='output') # displaying the result
+
+def modulus_numbers(e):
+    first_number = float(document.getElementById("num1").value)
+    second_number = float(document.getElementById("num2").value)
+    remainder = first_number % second_number
+
+    display(f'The remainder of {first_number} and {second_number} is {remainder}', target='output') # displaying the result
+
+def exponent_numbers(e):
+    first_number = float(document.getElementById("num1").value)
+    second_number = float(document.getElementById("num2").value)
+    exponent = first_number ** second_number
+
+    display(f'{first_number} raised to the power of {second_number} is {exponent}', target='output') # displaying the result
+
+def floor_division_numbers(e):
+    first_number = float(document.getElementById("num1").value)
+    second_number = float(document.getElementById("num2").value)
+    floor_quotient = first_number // second_number
+
+    display(f'The floor division of {first_number} and {second_number} is {floor_quotient}', target='output') # displaying the result
